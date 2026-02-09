@@ -1,15 +1,41 @@
 ﻿.field-common {
     width: 100%;
     height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
 
 .grass-field {
     background-color: green;
+    animation: grass 1.5s steps(1) infinite;
 }
-.road-field {
-    background-color: gray;
+
+@keyframes grass {
+    0% {
+        background-image: url("../../sprites/grass/grass0.png");
+    }
+    50% {
+        background-image: url("../../sprites/grass/grass1.png");
+    }
+    100% {
+        background-image: url("../../sprites/grass/grass2.png");
+    }
 }
+
 .water-field {
     background-color: blue;
+    animation: water 1.5s steps(1) infinite;
+}
+
+@keyframes water {
+    0% {
+        background-image: url("../../sprites/water/water1.png");
+    }
+    50% {
+        background-image: url("../../sprites/water/water2.png");
+    }
+    100% {
+        background-image: url("../../sprites/water/water3.png");
+    }
 }

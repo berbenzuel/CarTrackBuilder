@@ -1,22 +1,33 @@
 ﻿.road-vertical {
-    background-image: url("sprites/road/road-vertical.png");
+    background-image: url("../../sprites/road/road-vertical.png");
 }
 .road-horizontal {
-    background-image: url("sprites/road/road-horizontal.png");
+    background-image: url("../../sprites/road/road-horizontal.png");
 }
-.road-turn-top-right {
-    background-image: url("sprites/road/road-turn-top-right.png");
+.road-turn-up-right {
+    background-image: url("../../sprites/road/road-turn-up-right.png");
 }
-.road-turn-top-left {
-    background-image: url("sprites/road/road-turn-top-left.png");
+.road-turn-up-left {
+    background-image: url("../../sprites/road/road-turn-up-left.png");
 }
 .road-turn-down-left {
-    background-image: url("sprites/road/road-turn-down-left.png");
+    background-image: url("../../sprites/road/road-turn-down-left.png");
 }
 .road-turn-down-right {
-    background-image: url("sprites/road/road-turn-down-right.png");
+    background-image: url("../../sprites/road/road-turn-down-right.png");
 }
 .road-three-up {
-    background-image: url("sprites/road/road-three-up.png");
+    background-image: url("../../sprites/road/road-three-up.png");
 }
-
+.road-three-down {
+    background-image: url("../../sprites/road/road-three-down.png");
+}
+.road-three-left {
+    background-image: url("../../sprites/road/road-three-left.png");
+}
+.road-three-right {
+    background-image: url("../../sprites/road/road-three-right.png");
+}
+.road-cross {
+    background-image: url("../../sprites/road/road-cross.png");
+}
