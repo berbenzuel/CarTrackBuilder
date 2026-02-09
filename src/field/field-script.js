@@ -1,5 +1,6 @@
-﻿const FieldType = {
-    Grass: 1,
-    Road: 2,
-    Water: 3
+﻿window.FieldType = {
+    Grass: 0,
+    Road: 1,
+    Water: 2
 }
+

@@ -1,0 +1,22 @@
+﻿.road-vertical {
+    background-image: url("sprites/road/road-vertical.png");
+}
+.road-horizontal {
+    background-image: url("sprites/road/road-horizontal.png");
+}
+.road-turn-top-right {
+    background-image: url("sprites/road/road-turn-top-right.png");
+}
+.road-turn-top-left {
+    background-image: url("sprites/road/road-turn-top-left.png");
+}
+.road-turn-down-left {
+    background-image: url("sprites/road/road-turn-down-left.png");
+}
+.road-turn-down-right {
+    background-image: url("sprites/road/road-turn-down-right.png");
+}
+.road-three-up {
+    background-image: url("sprites/road/road-three-up.png");
+}
+

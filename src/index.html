@@ -1,24 +1,23 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Car track builder</title>
-  <!-- Font Awesome CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Car track builder</title>
 
-    <script src="script.js"></script>
-    <script src="field/field-script.js" type="module"></script>
+    <link rel="stylesheet" href="field/field-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="field/field-script.js"></script>
+    <script src="script.js" defer></script>
+
 </head>
 <body>
-
+    <button onclick="generateEmptyGrid()">generovat</button>
     <div id="grid-wrapper">
-        <div id="builder-grid">
+        <div id="builder-grid" class="grid">
 
         </div>
     </div>
+
 
 </body>
 </html>
