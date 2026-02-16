@@ -1,0 +1,29 @@
+﻿html,body {
+    height: 100%;
+}
+.grid {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(20,2.5rem);
+    grid-template-rows: repeat(20, 2.5rem);
+}
+
+#control-wrapper {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 2rem;
+}
+
+body > div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#saved {
+    color: green;
+    visibility: hidden;
+}

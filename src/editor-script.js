@@ -1,39 +1,53 @@
 ﻿let gridWidth = 20;
 let gridHeight = 20;
 
-const builderGrid = document.querySelector("#builder-grid");
 
-let data = [];
 
-window.addEventListener("load", () => initGrid());
+window.Data = [];
+
+window.addEventListener("load", () => {
+  const uuid = JSON.parse(localStorage.getItem("uuid"));
+  initGrid();
+  if(uuid) {
+    load(uuid)
+  }
+  else {
+    generateEmptyGrid()
+  }
+});
 
 function generateEmptyGrid() {
+  const builderGrid = document.querySelector("#builder-grid");
   for (let i = 0; i < gridWidth * gridHeight; i++) {
-    data[i] = FieldType.Grass;
+    Data[i] = FieldType.Grass;
     const element = builderGrid.children.item(i);
+    element.classList.value = "field-common";
     element.classList.add("grass-field");
   }
 }
 
 function toggleField(index, element) {
-  data[index] = (data[index] + 1) % 3;
+  Data[index] = (Data[index] + 1) % 3;
   element.classList.value = "field-common";
 
-  if (data[index] === 0) {
+  if (Data[index] === 0) {
     element.classList.add("grass-field");
     changeRoad(index, false, true);
-  } else if (data[index] === 1) {
+  } else if (Data[index] === 1) {
     changeRoad(index);
-  } else if (data[index] === 2) {
+  } else if (Data[index] === 2) {
     element.classList.add("water-field");
     changeRoad(index, false, true);
   }
+  console.log(Data)
 }
 
 function initGrid() {
-  data = [];
+  Data = [];
+  console.log(document.querySelectorAll("#builder-grid"));
+  const builderGrid = document.querySelector("#builder-grid");
   for (let i = 0; i < gridWidth * gridHeight; i++) {
-    data.push(FieldType.Grass);
+    Data.push(FieldType.Grass);
     const element = document.createElement("div");
     element.classList.add("field-common");
     element.classList.add("grass-field");
@@ -42,6 +56,26 @@ function initGrid() {
     element.addEventListener("click", (ev) => {
       toggleField(i, element);
     });
+  }
+}
+
+function draw() {
+  const builderGrid = document.querySelector("#builder-grid");
+  for(let i = 0; i < gridWidth * gridHeight; i++) {
+    let element = builderGrid.children.item(i);
+    element.classList.value = "field-common";
+    let data = Data[i];
+    switch (Number.parseInt(data)) {
+      case 0:
+        element.classList.add("grass-field")
+        break;
+      case 1:
+        changeRoad(i);
+        break;
+      case 2:
+        element.classList.add("water-field");
+        break;
+    }
   }
 }
 
@@ -58,19 +92,19 @@ function changeRoad(fieldIndex, isDeep = false, repair = false) {
   //left = 1, right = 2, up = 4, down = 8
   let connected = 0;
 
-  if (data[leftElement] === FieldType.Road) {
+  if (Data[leftElement] === FieldType.Road) {
     connected += 1;
     if (!isDeep) changeRoad(leftElement, true);
   }
-  if (data[rightElement] === FieldType.Road) {
+  if (Data[rightElement] === FieldType.Road) {
     connected += 2;
     if (!isDeep) changeRoad(rightElement, true);
   }
-  if (data[topElement] == FieldType.Road) {
+  if (Data[topElement] === FieldType.Road) {
     connected += 4;
     if (!isDeep) changeRoad(topElement, true);
   }
-  if (data[bottomElement] === FieldType.Road) {
+  if (Data[bottomElement] === FieldType.Road) {
     connected += 8;
     if (!isDeep) changeRoad(bottomElement, true);
   }
@@ -80,8 +114,9 @@ function changeRoad(fieldIndex, isDeep = false, repair = false) {
   }
 
   console.log(connected);
-  let roadClass = RoadClass.get(connected) ?? "road-vertical";
+  let roadClass = RoadClass.get(connected).toString() ?? "road-vertical";
 
+  const builderGrid = document.querySelector("#builder-grid");
   const element = builderGrid.children.item(fieldIndex);
   element.classList.value = "field-common";
   element.classList.add(roadClass);

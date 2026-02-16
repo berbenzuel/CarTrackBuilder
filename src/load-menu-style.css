@@ -1,0 +1,15 @@
+﻿#load-menu {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    width: 10rem;
+    height: 20rem;
+    background: bisque;
+    gap: 0;
+    visibility: hidden;
+}

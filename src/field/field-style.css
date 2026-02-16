@@ -8,7 +8,7 @@
 
 .grass-field {
     background-color: green;
-    animation: grass 1.5s steps(1) infinite;
+    animation: grass 3s steps(1) infinite;
 }
 
 @keyframes grass {
@@ -25,7 +25,7 @@
 
 .water-field {
     background-color: blue;
-    animation: water 1.5s steps(1) infinite;
+    animation: water 3s steps(1) infinite;
 }
 
 @keyframes water {

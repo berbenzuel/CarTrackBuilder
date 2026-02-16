@@ -4,16 +4,20 @@
         <meta charset="UTF-8" />
         <title>Car track builder</title>
 
-        <link rel="stylesheet" href="field/field-style.css" />
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="field/road-background.css" />
-        <script src="field/field-script.js"></script>
-        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="menu-style.css" />
+        <script src="save-and-load.js" defer></script>
+        <script src="editor-script.js" defer></script>
+        <link rel="stylesheet" href="load-menu-style.css" />
+        <script src="field/field-script.js" defer></script>
     </head>
     <body>
-        <button onclick="generateEmptyGrid()">generovat</button>
-        <div id="grid-wrapper">
-            <div id="builder-grid" class="grid"></div>
+        <div>
+            <div id="control-wrapper">
+                <button onclick="start()">new field</button>
+                <button onclick="loadMenu()" >load</button>
+            </div>
         </div>
+
+        <div id="load-menu">select save</div>
     </body>
 </html>
